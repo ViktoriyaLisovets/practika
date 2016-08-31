@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace praktika
 {
@@ -16,26 +17,53 @@ namespace praktika
         {
             InitializeComponent();
         }
-
+        string[] files;
+        string way=null;
+        int index = 0;
         private void showButton_Click(object sender, EventArgs e)
         {
-            if(openFileDialog1.ShowDialog() == DialogResult.OK)
+            if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
             {
-                pictureBox1.Load(openFileDialog1.FileName);
+                 way = folderBrowserDialog1.SelectedPath;
+                 files = Directory.GetFiles(way);
+                 pictureBox1.Image = new Bitmap(files[index]);
+                 NextButton.Enabled = true;
             }
         }
 
-        private void clearButton_Click(object sender, EventArgs e)
-        {
-            pictureBox1.Image = null;
+        private void NextButton_Click(object sender, EventArgs e)
+        {            
+            pictureBox1.Image = new Bitmap(files[++index]);
+            if (index != 0)
+                PrevButton.Enabled = true;
+            else
+                PrevButton.Enabled = false;
+            if (index == files.Length)
+            {
+                NextButton.Enabled = false;
+            }
+            else
+                NextButton.Enabled = true;
         }
 
-        private void backgroundButton_Click(object sender, EventArgs e)
+        private void PrevButton_Click(object sender, EventArgs e)
         {
-            if (colorDialog1.ShowDialog() == DialogResult.OK)
-                pictureBox1.BackColor = colorDialog1.Color;
+            pictureBox1.Image = new Bitmap(files[--index]);
+            if (index != 0)
+                PrevButton.Enabled = true;
+            else
+                PrevButton.Enabled = false;
+            if (index == files.Length)
+            {
+                NextButton.Enabled = false;
+            }
+            else
+                NextButton.Enabled = true;
+            
         }
+        
+     
 
-      
+
     }
 }

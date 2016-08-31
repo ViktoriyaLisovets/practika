@@ -19,3 +19,9 @@ C:\Users\Виктория\Desktop\практика\praktika\obj\Debug\praktika.c
 C:\Users\Виктория\практика\praktika\bin\Debug\praktika.exe.config
 C:\Users\Виктория\практика\praktika\obj\Debug\praktika.exe
 C:\Users\Виктория\практика\praktika\obj\Debug\praktika.pdb
+C:\Users\Виктория\практика\praktika\bin\Debug\praktika.exe
+C:\Users\Виктория\практика\praktika\bin\Debug\praktika.pdb
+C:\Users\Виктория\практика\praktika\obj\Debug\praktika.csprojResolveAssemblyReference.cache
+C:\Users\Виктория\практика\praktika\obj\Debug\praktika.MainForm.resources
+C:\Users\Виктория\практика\praktika\obj\Debug\praktika.Properties.Resources.resources
+C:\Users\Виктория\практика\praktika\obj\Debug\praktika.csproj.GenerateResource.Cache
