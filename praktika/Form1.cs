@@ -25,9 +25,14 @@ namespace praktika
             if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
             {
                  way = folderBrowserDialog1.SelectedPath;
-                 files = Directory.GetFiles(way);
-                 pictureBox1.Image = new Bitmap(files[index]);
-                 NextButton.Enabled = true;
+                 files = Directory.GetFiles(way,"*.jpg");
+                 if (files.Length != 0)
+                 {
+                     pictureBox1.Image = new Bitmap(files[index]);
+                     NextButton.Enabled = true;
+                 }
+                 else
+                     MessageBox.Show("Ошибка в выборе папки!");
             }
         }
 
@@ -61,9 +66,5 @@ namespace praktika
                 NextButton.Enabled = true;
             
         }
-        
-     
-
-
     }
 }
